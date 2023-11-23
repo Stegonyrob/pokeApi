@@ -9,6 +9,6 @@
 </template>
 
 
-<style lang="scss" scooped>
+<style lang="scss" scoped>
 
 </style>
