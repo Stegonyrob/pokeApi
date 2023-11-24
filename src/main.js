@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import '@/assets/main.scss'
+=======
+import './assets/main.scss'
+>>>>>>> dev
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
