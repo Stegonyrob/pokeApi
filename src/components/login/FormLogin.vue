@@ -1,5 +1,5 @@
 <script setup>
-// import { ref } from 'vue';
+import { ref } from 'vue';
 
 // export default {
 //  setup() {
@@ -14,26 +14,37 @@
 //  },
 // };
 
-
+ 
+const gifUrl = ref('src/assets/img/Image20231124145247.gif')
 
 </script>
 
 <template>
-  <div class="login-form border border-primary border-5 rounded-5  ">
+  <section>
+<div class="container-login container-xxl">
+  <div class="col-12 col-md-6">
+ <img :src="gifUrl" alt="Descripción del GIF" class="gift">
+        </div>
+  <div class="container ">
+    <div class="col-12 col-ms-8">
+  <img src="../../assets/img/Gengar icon 2.png" class=" my-icon  rounded-circle border border-5 rounded-5 " alt="Usuario">
+        
+  <div class="login-form border  border-5 rounded-5 ">
    
-        <img src="../../assets/img/Gengar icon 2.png" class="rounded-circle border border-primary border-5 rounded-5 " alt="Usuario">
-        <form @submit.prevent="login">
+        <form @submit.prevent="login ">
             <div class="form-group">
             <input type="email" class="form-control" placeholder="Email" v-model="email">
             </div>
-            <div class="form-group">
+            <div class="form-group  ">
             <input type="password" class="form-control" placeholder="Password" v-model="password">
             </div>
             <button type="submit" class="btn btn-primary">Iniciar sesión</button>
         </form>
-  
+      </div>
         </div>
-
+      </div>
+    </div>
+  </section>
 </template>
 
 
@@ -42,32 +53,50 @@
 <style lang="scss" scoped>
 @import '@/assets/base.scss';
 
-.bg-header {
- background: $gradient;
-}
-.login-form {
- position: absolute;
- top: 50%;
- right: 20%;
- transform: translateY(-50%);
- width: 30%;
+
+section{
  display: flex;
- flex-direction: column;
- align-items: center;
- background-color: yellow;
+align-content: space-around;
+justify-content: center;
+direction:row ;
+.container{ 
+width: 30%;
+ margin-left: 10%;
+.login-form {
+    margin-left: 27rem;
+    margin-top: -22rem;
+    padding: 2rem;
+    background-color:rgb(255, 218,26,23%);
+    border-color: #86b7fe !important;
+    z-index: -1;
+    width: 100%;
+    align-items: center;
+ 
  
  img {
    width: 10rem;
    height: 10rem;
    object-fit: cover;
-   margin-bottom: 8rem;
+ 
   }
  button{
     margin-bottom: 2rem;
-    margin-left: 2.5rem;
+    margin-left: 3rem;
  }
  .form-group {
-   margin-bottom: 2rem;
+  margin-top: 2.5rem;
+  margin-bottom: 2rem;
  }
+}
+.my-icon{
+  border-color:#86b7fe !important;
+  background-color: white;
+  margin-top: -45rem;
+  margin-left: 31rem;
+}
+}
+.gift{
+  margin-left: 9rem;
+}
 }
 </style>
