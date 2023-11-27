@@ -33,10 +33,10 @@ const checkedNames = ref([])
 </div>
 </template>
 
-<style scoped>
-
+<style  lang="scss" scoped>
+@import '../../assets/variables.scss';
 .contentCheck {
-  color: aqua;
+  color: $primary-color;
   font-size: 20px;
 }
 
