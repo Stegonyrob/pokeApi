@@ -1,19 +1,23 @@
 <script setup>
-import { ref, onBeforeMount } from "vue";
+import { ref, reactive } from "vue";
+import { getPokemon } from "./repository/repository";
 import PokemonCard from "./PokemonCard.vue";
-import { pokemonResults } from "./repository/repository";
-import { usePokemonStore } from "@/stores/PokemonStore.js";
 
-const pokemonName = ref("Bulbasur");
+let pokemons = reactive([])
+let isLoaded = ref(false)
 
-const store = usePokemonStore();
+async function getData() {
+    pokemons = await getPokemon()
+    isLoaded.value = true
+}
+getData()
 
-store.getPokemons();
 </script>
 
 <template>
   <section>
     <h2>List Pokemons</h2>
-    <PokemonCard v-for="pokemon in store.pokemons" :pokemon="pokemon" />
+    <PokemonCard v-if="isLoaded" v-for="pokemon in pokemons" :pokemon="pokemon"/>
+    <div v-else>Cargando </div>
   </section>
 </template>
