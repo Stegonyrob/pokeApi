@@ -1,102 +1,89 @@
 <script setup>
 import { ref } from 'vue';
+import { useUserStore } from '@/store/loginStore'
 
-// export default {
-//  setup() {
-//    const email = ref('');
-//    const password = ref('');
+const store = useUserStore()
 
-//    const login = () => {
-//      // Aquí va tu lógica de inicio de sesión
-//    };
+const email = ref('');
+const password = ref('');
 
-//    return { email, password, login };
-//  },
-// };
-
- 
 const gifUrl = ref('src/assets/img/Image20231124145247.gif')
-
 </script>
 
+
 <template>
-  <section>
-<div class="container-login container-xxl">
-  <div class="col-12 col-md-6">
- <img :src="gifUrl" alt="Descripción del GIF" class="gift">
-        </div>
-  <div class="container ">
-    <div class="col-12 col-ms-8">
-  <img src="../../assets/img/Gengar icon 2.png" class=" my-icon  rounded-circle border border-5 rounded-5 " alt="Usuario">
-        
-  <div class="login-form border  border-5 rounded-5 ">
-   
-        <form @submit.prevent="login ">
-            <div class="form-group">
-            <input type="email" class="form-control" placeholder="Email" v-model="email">
+    <section>
+      <div>
+            <div class="gift">
+              <img :src="gifUrl" alt="Descripción del GIF" >
             </div>
-            <div class="form-group  ">
-            <input type="password" class="form-control" placeholder="Password" v-model="password">
+                <section class="container border  border-5 rounded-5">
+                  <div class="my-icon border  border-5 rounded-circle">
+                    <img src="../../assets/img/Gengar icon 2.png" alt=" pokemon">
+                  </div>
+                
+              <v-form>
+                    <div class="input-group container-lg ">
+                      <span class="input-group-text mt-5" id="addon-wrapping"><img src="../../assets/img/icon3 1.png" id="icon-pikachu"
+                          alt=""></span>
+                      <input type="text" class="form-control mt-5" placeholder="Username" aria-label="Username"
+                        aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="input-group container-lg">
+                      <span class="input-group-text" id="addon-wrapping"><i class="bi bi-key"></i></span>
+                      <input type="text" class="form-control" placeholder="Password" aria-label="Password"
+                        aria-describedby="addon-wrapping">
+                    </div>
+                    <button type="button" class="btn btn-outline-warning">Login</button>
+              </v-form>
+            </section>
             </div>
-            <button type="submit" class="btn btn-primary">Iniciar sesión</button>
-        </form>
-      </div>
-        </div>
-      </div>
-    </div>
+     
   </section>
 </template>
-
-
 
 
 <style lang="scss" scoped>
 @import '@/assets/base.scss';
 
 
-section{
- display: flex;
-align-content: space-around;
-justify-content: center;
-direction:row ;
-.container{ 
-width: 30%;
- margin-left: 10%;
-.login-form {
-    margin-left: 27rem;
-    margin-top: -22rem;
-    padding: 2rem;
-    background-color:rgb(255, 218,26,23%);
+section {
+    display: flex;
+    align-content: space-around;
+    justify-content: center;
+    direction: row;
+    .container {
+    background-color: rgb(255, 218, 26, 23%);
     border-color: #86b7fe !important;
     z-index: -1;
-    width: 100%;
     align-items: center;
- 
- 
- img {
-   width: 10rem;
-   height: 10rem;
-   object-fit: cover;
- 
+    margin-top: -80%;
+    margin-right: -40%;
+    .input-group {
+      margin-top: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    button{
+      margin-left: 7rem;
+      margin-bottom: 2rem;
+     }
+
+    #icon-pikachu {
+      width: 1rem;
+      height: auto;
+    }
   }
- button{
-    margin-bottom: 2rem;
-    margin-left: 3rem;
- }
- .form-group {
-  margin-top: 2.5rem;
-  margin-bottom: 2rem;
- }
-}
-.my-icon{
-  border-color:#86b7fe !important;
-  background-color: white;
-  margin-top: -45rem;
-  margin-left: 31rem;
-}
-}
-.gift{
-  margin-left: 9rem;
-}
-}
-</style>
+
+  .my-icon {
+    border-color: #86b7fe !important;
+    background-color: white;
+    margin-top: -18rem;
+    margin-left: 1rem;
+    position: absolute;
+  }
+
+
+  .gift {
+    margin-left: -15rem;
+  }
+}</style>
