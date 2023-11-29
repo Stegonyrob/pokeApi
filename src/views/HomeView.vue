@@ -1,23 +1,10 @@
 <script setup>
-import Filter from "../components/home/filter.vue" 
+import { ref } from "vue";
+import PokemonList from "../components/PokemonList.vue";
 </script>
 
 <template>
-  <div class="Home">
-    <h1>hogar</h1>
-    
-    <div class="filterClass">
-    <Filter/>
-    </div>
-  </div>
- 
-
+  <main></main>
 </template>
 
-<style scoped>
-@media (min-width: 1024px) {
-  h3 {
-    color: blueviolet;
-  }
-}
-</style>
+<style scoped></style>
