@@ -1,14 +1,24 @@
 <script setup>
 import { ref } from 'vue';
-import { useUserStore } from '@/store/loginStore'
+import { useAuthStore } from '@/store/authStore'
 
-const store = useUserStore()
+const store = useAuthStore()
 
-const email = ref('');
+const username = ref('');
 const password = ref('');
-
+const errorMessage = ref('');
 const gifUrl = ref('src/assets/img/Image20231124145247.gif')
-</script>
+function login(){
+if( username.value == store.user.username && password.value == store.user.password){
+  store.user.isAuthenticated = true
+  const redirectPath = route.query.redirect || '/favorites'
+  router.push(redirectPath)
+}else {
+            errorMessage.value = 'Usuario o contraseña incorrecta';
+        }
+}
+
+ </script>
 
 
 <template>
@@ -22,19 +32,19 @@ const gifUrl = ref('src/assets/img/Image20231124145247.gif')
                     <img src="../../assets/img/Gengar icon 2.png" alt=" pokemon">
                   </div>
                 
-              <v-form>
+              <v-form @submit="login">
                     <div class="input-group container-lg ">
                       <span class="input-group-text mt-5" id="addon-wrapping"><img src="../../assets/img/icon3 1.png" id="icon-pikachu"
                           alt=""></span>
                       <input type="text" class="form-control mt-5" placeholder="Username" aria-label="Username"
-                        aria-describedby="addon-wrapping">
+                        aria-describedby="addon-wrapping" v-model="username">
                     </div>
                     <div class="input-group container-lg">
                       <span class="input-group-text" id="addon-wrapping"><i class="bi bi-key"></i></span>
                       <input type="text" class="form-control" placeholder="Password" aria-label="Password"
-                        aria-describedby="addon-wrapping">
+                        aria-describedby="addon-wrapping" v-model="password">
                     </div>
-                    <button type="button" class="btn btn-outline-warning">Login</button>
+                    <button type="submit" class="btn btn-outline-warning">Login</button>
               </v-form>
             </section>
             </div>
