@@ -4,7 +4,10 @@ import PokemonList from "../components/PokemonList.vue";
 </script>
 
 <template>
-  <main></main>
+  <main>
+    <PokemonList />
+    
+  </main>
 </template>
 
 <style scoped></style>
