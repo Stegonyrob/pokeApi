@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from "vue";
 import PokemonList from "../components/PokemonList.vue";
-import PokemonFilter from "../components/PokemonFilter.vue";
 
 const users = ref([
   { name: "Romo", email: "romo@gmail.com" },
@@ -13,7 +12,6 @@ const users = ref([
   <main>
     <h1>HomeView</h1>
     <PokemonList />
-    <PokemonFilter />
     
     <ul>
       <!-- <UserCard v-for="user in users" v-bind:user="user" /> -->
