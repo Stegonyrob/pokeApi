@@ -8,7 +8,7 @@
 
    <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#"> <img src="" alt="Poké-Hub logo">Poké-Hub </a>
+    <a class="navbar-brand" href="#"> <img src="/src/assets/img/pokehub14.png" alt="Poké-Hub logo"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -24,7 +24,10 @@
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Login</a>
+          <a class="nav-link" href="#"><img src="/src/assets/img/Gengar icon.png" alt="Gengar icon">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><img src="/src/assets/img/Gengar icon.png" alt="Gengar icon">Login</a>
         </li>
       </ul>
     
