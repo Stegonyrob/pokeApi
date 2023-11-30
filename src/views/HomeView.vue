@@ -8,6 +8,6 @@ import Header from '@/components/home/Header.vue'
   </main>
 </template>
 
-<style lang="scss" scopedq>
-@import '@/assets/variables.scss';
+<style lang="scss" scoped>
+//@import '@/assets/variables.scss';
 </style>
