@@ -8,7 +8,7 @@
 
    <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#"> <img src="/src/assets/img/pokehub14.png" alt="Poké-Hub logo"></a>
+    <a class="navbar-brand" href="#"> <img src="/src/assets/img/pokehub14.png" width="297" height="97" alt="Poké-Hub logo"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -24,10 +24,12 @@
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><img src="/src/assets/img/Gengar icon.png" alt="Gengar icon">Login</a>
+          <a class="nav-link" href="#"><img src="/src/assets/img/Gengar icon.png" width="69" height="61" alt="Gengar icon">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><img src="/src/assets/img/Gengar icon.png" alt="Gengar icon">Login</a>
+          <svg xmlns="http://www.w3.org/2000/svg" width="39" height="39" fill="#F9825C" class="bi bi-heart-fill" viewBox="0 0 16 16">
+           <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+          </svg>
         </li>
       </ul>
     
