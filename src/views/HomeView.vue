@@ -2,6 +2,7 @@
 import TheWelcome from '../components/TheWelcome.vue'
 import Header from '../components/home/Header.vue'
 
+
 </script>
 
 <template>
