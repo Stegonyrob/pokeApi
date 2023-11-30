@@ -1,12 +1,10 @@
 <script setup>
 
-
-
 </script>
 
 <template>
   <header>
-   <nav class="navbar navbar-expand-lg bg-body-tertiary">
+   <nav class="navbar navbar-expand-lg">
      <div class="container-fluid">
        <a class="navbar-brand" href="#"> <img src="/src/assets/img/pokehub14.png" width="257" height="77" alt="Poké-Hub logo"></a>
        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,7 +43,7 @@
 header {
   background-color: #ffe788;
   background-image: linear-gradient(249deg, #ffe788 25%, #c6d0bf 58%, #d0d9e4 75%);
-  
+  padding: 1%;
  }
 
 </style>
