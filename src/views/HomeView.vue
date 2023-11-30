@@ -1,5 +1,5 @@
 <script setup>
-import Header from '../components/home/Header.vue'
+import Header from '@/components/home/Header.vue'
 </script>
 
 <template>
@@ -8,6 +8,6 @@ import Header from '../components/home/Header.vue'
   </main>
 </template>
 
-<style lang="scss" scoped>
-//@import '@/assets/variables.scss';
+<style lang="scss" scopedq>
+@import '@/assets/variables.scss';
 </style>
