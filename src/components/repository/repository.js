@@ -11,3 +11,5 @@ export async function getPokemon() {
 }
 
 export const pokemonResults = await getPokemon();
+
+
