@@ -16,14 +16,16 @@ getDetails();
 
 <template>
   <div>
-    <h3>Poke type</h3>
+    <h3 id="Title">Poke type</h3>
 
-    <div v-if="detailsLoaded">
-          
-    </div>
+    <div v-if="detailsLoaded"></div>
 
-    <div v-for="type in typesPokemon" :key="type.name" >
-    <input type="checkbox" v-model="typesPokemon.type" :value="type.name"> {{ type.name }}
+    <div v-for="type in typesPokemon" :key="type.name">
+      <input type="checkbox" v-model="typesPokemon.type" :value="type.name" />
+      {{ type.name }}
     </div>
   </div>
 </template>
+
+<style lang="sass">
+</style>
