@@ -14,7 +14,7 @@ const router = useRouter();
 const route = useRoute();
 
 function submit() {
-  const foundUser = store.user.dfin(u => u.userName === username.value && u.password === password.value);
+  const foundUser = store.user.find(u => u.userName === username.value && u.password === password.value);
   if (foundUser) {
     foundUser.isAuthenticated = true;
     const redirectPath = route.query.redirect || '/favorites';
