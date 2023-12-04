@@ -1,19 +1,25 @@
 <script setup>
 import { ref } from 'vue';
-import { useAuthStore } from '@/store/authStore'
+import { useAuthStore } from '@/store/auth.js';
+import { useRouter, useRoute } from 'vue-router';
 
-const store = useAuthStore()
+const gifUrl = ref('src/assets/img/Image20231124145247.gif');
+
 
 const username = ref('');
 const password = ref('');
-const errorMessage = ref('');
-const gifUrl = ref('src/assets/img/Image20231124145247.gif')
-function login(){
-if( username.value == store.user.username && password.value == store.user.password){
-  store.user.isAuthenticated = true
-  const redirectPath = route.query.redirect || '/favorites'
-  router.push(redirectPath)
-}else {
+
+const store = useAuthStore();
+const router = useRouter();
+const route = useRoute();
+
+function submit() {
+  const foundUser = store.user.find(u => u.userName === username.value && u.password === password.value);
+  if (foundUser) {
+    foundUser.isAuthenticated = true;
+    const redirectPath = route.query.redirect || '/favorites';
+    router.push(redirectPath);
+  }else {
             errorMessage.value = 'Usuario o contraseña incorrecta';
         }
 }
@@ -36,15 +42,15 @@ if( username.value == store.user.username && password.value == store.user.passwo
                     <div class="input-group container-lg ">
                       <span class="input-group-text mt-5" id="addon-wrapping"><img src="../../assets/img/icon3 1.png" id="icon-pikachu"
                           alt=""></span>
-                      <input type="text" class="form-control mt-5" placeholder="Username" aria-label="Username"
+                      <input type="text" class="form-control mt-5"  name = "username" placeholder="Username" id="username"
                         aria-describedby="addon-wrapping" v-model="username">
                     </div>
                     <div class="input-group container-lg">
                       <span class="input-group-text" id="addon-wrapping"><i class="bi bi-key"></i></span>
-                      <input type="text" class="form-control" placeholder="Password" aria-label="Password"
+                      <input type="password" name = "password" class="form-control" placeholder="Password" id="password"
                         aria-describedby="addon-wrapping" v-model="password">
                     </div>
-                    <button type="submit" class="btn btn-outline-warning">Login</button>
+                    <button type="submit" @click="submit" class="btn btn-outline-warning">Login</button>
               </v-form>
             </section>
             </div>

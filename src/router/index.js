@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import { useAuthStore } from '../store/authStore'
+import { useAuthStore } from '../store/auth.js'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -21,21 +21,21 @@ const router = createRouter({
     },
   
     {
-      path: '/favorite',
-      name: 'favorite',
+      path: '/favorites',
+      name: 'favorites',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
- 
-      component: () => import('../views/FavoriteView.vue')
+      component: () => import('../views/FavoritesView.vue'),
+    
     }
   ]
 })
-// router.beforeEach((to,from) => {
-//   const store = useAuthStore ()
-//   if(to.mate.requiresAuth && !store.user.isAuthenticated){
-//     return{name:'login'}
-//   }
-// })
+router.beforeEach((to,from) => {
+  const store = useAuthStore ()
+  if(to.meta.requiresAuth ){
+    return{name:'login'}
+  }
+})
 
 export default router
