@@ -5,8 +5,8 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <div class="my-icon border  border-5 rounded-circle">
-                    <img src="./src/assets/img/psyduck icon 1.png" alt=" pokemon">
+                    <div class="my-icon border  border-1 rounded-circle">
+                    <img src="../../assets/img/Gengar icon 2.png" alt=" pokemon">
                   </div>
                     <button type="button" class="btn-close btn btn-outline-warning rounded-circle" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -28,7 +28,7 @@
                 </div>
                 <div class="input-group container-sm px-5">
                     <span class="input-group-text mt-5" id="addon-wrapping">W</span>
-                    <input type="text" class="form-control mt-5" name="pokeweight" placeholder="pokeweight" id="pokeweight"
+                    <input type="text" class="form-control mt-5" name="pokeweight" placeholder="Pokeweight" id="pokeweight"
                         aria-describedby="addon-wrapping" v-model="pokeweight">
                 </div>
                 <div class="modal-footer mt-5">
@@ -40,6 +40,11 @@
     </div>
 </template>
 <style lang="scss" scoped>
+.modal-content{
+    margin-top: 8rem;
+  .my-icon{ margin-top: -5rem;
+    margin-left: 10rem;
+background-color: white;}
 span{
     font-size: 1.8rem;
     width: 3.5rem;
@@ -50,5 +55,5 @@ span{
 icon-pikachu{
     width: 1.5rem;
     height: 1.5rem;
-}
+}}
 </style>
