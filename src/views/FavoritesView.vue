@@ -1,6 +1,14 @@
+<script setup>
+import PopFavorite from "../components/favorite/PopFavorite.vue";
+</script>
 <template>
     <div class="favorite">
       <h1>tus favoritos</h1>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+  Añadir
+</button>
+
+      <PopFavorite/>
     </div>
   </template>
   
