@@ -1,32 +1,29 @@
 <script setup>
 import { ref, reactive } from "vue";
 
-const props = defineProps({
-  type: Object,
-});
-
 let typesPokemon = reactive({});
-let detailsLoaded = ref(false)
+let detailsLoaded = ref(false);
 
 async function getDetails() {
-  const response = await fetch(props.type.url);
-  const data = await response.json();
-  typesPokemon = data;
-  detailsLoaded.value = true
-}
-getDetails()
+  const response = await fetch("https://pokeapi.co/api/v2/type");
 
+  const data = await response.json();
+  typesPokemon = data.results;
+  detailsLoaded.value = true;
+}
+getDetails();
 </script>
 
 <template>
   <div>
     <h3>Poke type</h3>
-    <img v-if="detailsLoaded" :src="detailsPokemon.sprites.front_default" alt="pokemon" />
-    <div>
-      <h2>Soy del tipo {{ props.type.name }} con id {{ detailsPokemon.id }} </h2>
-      <div id="uri">{{ props.type.url }}</div>
+
+    <div v-if="detailsLoaded">
+          
     </div>
 
-    <div v-show="detailsLoaded">{{ detailsPokemon.height }}</div>
+    <div v-for="type in typesPokemon" :key="type.name" >
+    <input type="checkbox" v-model="typesPokemon.type" :value="type.name"> {{ type.name }}
+    </div>
   </div>
 </template>
