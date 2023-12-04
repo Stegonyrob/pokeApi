@@ -1,6 +1,4 @@
 import './assets/main.scss'
-import './components/repository/repository.js'
-
 
 //-------
 import { createApp } from 'vue'

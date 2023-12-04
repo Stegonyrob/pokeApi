@@ -1,7 +1,14 @@
+<script setup>
+import PokemonType from '../models/pokemonType';
+
+
+
+</script>
 <template>
     <div class="favorite">
       <h1>tus favoritos</h1>
     </div>
+    <PokemonType />
   </template>
   
   <style>

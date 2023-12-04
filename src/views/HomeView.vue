@@ -2,10 +2,6 @@
 import { ref } from "vue";
 import PokemonList from "../components/PokemonList.vue";
 
-const users = ref([
-  { name: "Romo", email: "romo@gmail.com" },
-  { name: "Tom", email: "tom@gmail.com" },
-]);
 </script>
 
 <template>
