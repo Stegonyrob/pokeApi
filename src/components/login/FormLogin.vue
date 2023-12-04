@@ -14,7 +14,7 @@ const router = useRouter();
 const route = useRoute();
 
 function submit() {
-  const foundUser = store.user.find(u => u.userName === username.value && u.password === password.value);
+  const foundUser = store.user.dfin(u => u.userName === username.value && u.password === password.value);
   if (foundUser) {
     foundUser.isAuthenticated = true;
     const redirectPath = route.query.redirect || '/favorites';
@@ -58,31 +58,32 @@ function submit() {
   </section>
 </template>
 
-
 <style lang="scss" scoped>
 @import '@/assets/base.scss';
 
-
 section {
-    display: flex;
-    align-content: space-around;
-    justify-content: center;
-    direction: row;
-    .container {
+  display: flex;
+  align-content: space-around;
+  justify-content: center;
+  direction: row;
+  
+  .container {
     background-color: rgb(255, 218, 26, 23%);
     border-color: #86b7fe !important;
     z-index: -1;
     align-items: center;
     margin-top: -80%;
     margin-right: -40%;
+    
     .input-group {
       margin-top: 1.5rem;
       margin-bottom: 2rem;
     }
-    button{
+    
+    button {
       margin-left: 7rem;
       margin-bottom: 2rem;
-     }
+    }
 
     #icon-pikachu {
       width: 1rem;
@@ -98,8 +99,35 @@ section {
     position: absolute;
   }
 
-
   .gift {
     margin-left: -15rem;
   }
-}</style>
+}
+
+// Media queries para pantallas con ancho máximo de 750px
+@media screen and (max-width: 750px) {
+  section {
+    flex-direction: column;
+    max-width: 80%;
+    justify-content: center;
+    .container {
+      margin:auto;
+    }
+
+    .my-icon {
+      margin-top: -5rem;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      position: static;
+    }
+
+    .gift {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 5rem;
+    }
+  }
+}
+</style>
