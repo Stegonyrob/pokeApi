@@ -51,7 +51,7 @@ footer {
   align-items: center;
   color: #616161;
   font-size: 0.9rem;
-  padding: 2%;
+  padding: 1%;
   .icon {
     float: left;
     margin: 0.5rem;
