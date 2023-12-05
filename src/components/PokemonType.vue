@@ -21,7 +21,7 @@ getDetails();
     <div v-if="detailsLoaded"></div>
 
     <div id="boxFilter">
-      <div id="checkFilter" v-for="type in typesPokemon" :key="type.name">
+      <div id="checkFilter" v-for="type in typesPokemon" :key="type.name" >
         <input type="checkbox" v-model="typesPokemon.type" :value="type.name" />
         {{ type.name }}
       </div>
@@ -29,16 +29,16 @@ getDetails();
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
  #Title {
-  color: red;
+  color: rgb(255, 0, 217);
  }
 
  #boxFilter {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  color: blue;
+  color: rgb(2, 42, 5);
  }
 
  #checkFilter {
