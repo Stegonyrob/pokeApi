@@ -19,13 +19,11 @@ getDetails();
     <h3 id="Title">Poke type</h3>
 
     <div v-if="detailsLoaded"></div>
-    <div>
-
-    </div>
+    
     <div id="boxFilter">
-      <div id="checkFilter" v-for="type in typesPokemon">
-        <input :name="type.name" type="checkbox" v-model="typesPokemon.type" :value="type.name" />
-        <label :for="type.name">{{ type.name }} </label>
+      <div id="checkFilter" v-for="pokemonType in typesPokemon">
+        <input :name="pokemonType.name" type="checkbox" v-model="typesPokemon.type" :value="pokemonType.name" />
+        <label :for="pokemonType.name">{{ pokemonType.name }} </label>
       </div>
     </div>
 
