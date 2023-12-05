@@ -1,30 +1,20 @@
-import pokemonResults from "../components/repository/repository.js";
+import Pokemon from '../models/Pokemon.js';
+import pokemonResults from '../components/repository/repository.js';
 
-//// reocger los datos que quiero obtener de cada enlace dentro de la pokeapi.
-///
-///
-///
-/////
-
-
-
-
-
-function PokemonService {
-  pokemons = [];
-
+class PokemonService {
   constructor(repository) {
     this.repository = repository;
+    this.pokemons = [];
   }
 
   async index() {
-    const pokemons = await this.repository.getPokemonData();
+    const pokemonData = await this.repository.getPokemonData();
 
-    pokemons.forEach((pokemon) => {
+    pokemonData.forEach((pokemon) => {
       const pokemonAddData = new Pokemon(
         pokemon.name,
-        pokemon.image,
-        pokemon.type
+        pokemon.sprites.front_default,
+        pokemon.types[0].type.name
       );
       this.pokemons.push(pokemonAddData);
     });
@@ -32,3 +22,5 @@ function PokemonService {
     return this.pokemons;
   }
 }
+
+export default new PokemonService(pokemonResults);
