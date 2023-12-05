@@ -43,7 +43,7 @@
 header {
   background-color: #ffe788;
   background-image: linear-gradient(249deg, #ffe788 25%, #c6d0bf 58%, #d0d9e4 75%);
-  padding: 1%;
+  padding: 2%;
  }
 
 </style>
