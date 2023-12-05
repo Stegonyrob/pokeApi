@@ -59,7 +59,7 @@ header {
   }
 
   .bi-heart-fill {
-    margin-top: 3.3vh;
+    margin-top: 3vh;
     margin-left: 3vh;
   }
 
