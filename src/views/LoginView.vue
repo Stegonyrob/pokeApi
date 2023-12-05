@@ -1,6 +1,6 @@
 <script setup>
 import FormLogin from '../components/login/FormLogin.vue'
-import Login from '../components/login/login.vue'
+
 </script>
 <template>
     <div class="login">

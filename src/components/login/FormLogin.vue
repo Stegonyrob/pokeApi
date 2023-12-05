@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-import { useAuthStore } from '@/store/auth.js';
+import { useAuthStore } from '@/stores/auth.js';
 import { useRouter, useRoute } from 'vue-router';
 
 const gifUrl = ref('src/assets/img/Image20231124145247.gif');

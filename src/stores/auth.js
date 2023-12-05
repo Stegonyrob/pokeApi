@@ -1,8 +1,8 @@
-import { ref } from 'vue';
+import { reactive } from 'vue';
 import { defineStore } from 'pinia';
 
 export const useAuthStore = defineStore('auth', () => {
-  const user = ref([
+  const user = reactive([
     {
       userName: 'admin',
       password: '123456',
