@@ -51,16 +51,20 @@ footer {
   align-items: center;
   color: #616161;
   font-size: 0.9rem;
-  padding: 1%;
+  padding: 1.5%;
   .icon {
     float: left;
-    margin: 0.5rem;
+    margin: 0.7rem;
   }
 
   svg {
     color: #616161;
     width: 21px;
     height: 21px;
+  }
+
+  .copyright {
+    margin-top: 1%;
   }
 }
 </style>
