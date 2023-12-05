@@ -7,8 +7,7 @@ import HelloWorld from './components/HelloWorld.vue'
   <header>
     
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+    
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
@@ -16,7 +15,7 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/favorite">Favorite</RouterLink>
        
       </nav>
-    </div>
+   
   </header>
 
   <RouterView />
