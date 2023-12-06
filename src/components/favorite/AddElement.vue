@@ -45,14 +45,16 @@
 .modal-content {
     margin-top: 8rem;
   .my-icon{ 
- 
+
     margin-top: -5rem;
-    margin-left: 10.3rem;
+    margin-left: 10rem;
     background-color: white;
-    }
-  img {
-    width: 25vh;
   }
+  
+  img {
+    width: 9rem;
+  }
+  
   span {
     font-size: 1.8rem;
     width: 3.5rem;
