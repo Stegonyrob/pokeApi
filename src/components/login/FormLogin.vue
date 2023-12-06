@@ -11,13 +11,12 @@ const store = useAuthStore()
 
 function login() {
 
-  if (username.value == store.user.username && password.value == store.user.password) {
+if (username.value == store.user.username) {
     store.user.isAuthenticated = true
-    const redirectPath = route.query.redirect || '/favorite'
+    const redirectPath = route.query.redirect || '/favorites'
     router.push(redirectPath)
-  }
 }
-
+}
 </script>
 <template>
   <section>
