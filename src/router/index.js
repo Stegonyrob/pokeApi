@@ -21,12 +21,12 @@ const router = createRouter({
     },
   
     {
-      path: '/favorites',
-      name: 'favorites',
+      path: '/favorite',
+      name: 'favorite',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/FavoritesView.vue'),
+      component: () => import('../views/FavoriteView.vue'),
     
     }
   ]
