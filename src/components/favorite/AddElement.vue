@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+  <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#myModal">
     Añadir
   </button>
 
@@ -12,7 +12,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <div class="my-icon border  border-1 rounded-circle">
-                    <img src="../../assets/img/Gengar icon 2.png" alt=" pokemon">
+                    <img src="../../assets/img/psyduck icon.png" alt="psyduck">
                 </div>
                 <button type="button" class="btn-close btn btn-outline-warning rounded-circle" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
@@ -44,10 +44,16 @@
 <style lang="scss" scoped>
 .modal-content {
     margin-top: 8rem;
-  .my-icon{ margin-top: -5rem;
-    margin-left: 10rem;
-     background-color: white;}
-  span{
+  .my-icon{ 
+ 
+    margin-top: -5rem;
+    margin-left: 10.3rem;
+    background-color: white;
+    }
+  img {
+    width: 25vh;
+  }
+  span {
     font-size: 1.8rem;
     width: 3.5rem;
     height: 3.5rem;
