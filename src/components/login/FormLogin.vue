@@ -13,7 +13,7 @@ function login() {
 
 if (username.value == store.user.username) {
     store.user.isAuthenticated = true
-    const redirectPath = route.query.redirect || '/favorites'
+    const redirectPath = route.query.redirect || '/favorite'
     router.push(redirectPath)
 }
 }
