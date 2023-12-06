@@ -1,29 +1,20 @@
 <script setup>
 import { ref } from 'vue';
-import { useAuthStore } from '@/store/auth.js';
-import { useRouter, useRoute } from 'vue-router';
-
-const gifUrl = ref('src/assets/img/Image20231124145247.gif');
-
-
+import { useAuthStore } from '@/stores/auth.js';
+import {route,router} from 'vue-router'
 const username = ref('');
 const password = ref('');
-
 const store = useAuthStore();
-const router = useRouter();
-const route = useRoute();
 
-function submit() {
-  const foundUser = store.user.find(u => u.userName === username.value && u.password === password.value);
-  if (foundUser) {
-    foundUser.isAuthenticated = true;
-    const redirectPath = route.query.redirect || '/favorites';
-    router.push(redirectPath);
-  }else {
-            errorMessage.value = 'Usuario o contraseña incorrecta';
-        }
+const gifUrl = ref('src/assets/img/Image20231124145247.gif');
+function login() {
+
+if ( username.value ==  store.user.username && password.value == store.user.password)
+store.user.isAuthenticated = true;
+const redirectPath = route.query.redirect ||'/favorites'
+router.push (redirectPath)
+
 }
-
  </script>
 
 
@@ -38,7 +29,7 @@ function submit() {
                     <img src="../../assets/img/Gengar icon 2.png" alt=" pokemon">
                   </div>
                 
-              <v-form @submit="login">
+              <form @submit.prevent="login">
                     <div class="input-group container-lg ">
                       <span class="input-group-text mt-5" id="addon-wrapping"><img src="../../assets/img/icon3 1.png" id="icon-pikachu"
                           alt=""></span>
@@ -50,8 +41,8 @@ function submit() {
                       <input type="password" name = "password" class="form-control" placeholder="Password" id="password"
                         aria-describedby="addon-wrapping" v-model="password">
                     </div>
-                    <button type="submit" @click="submit" class="btn btn-outline-warning">Login</button>
-              </v-form>
+                    <button type="submit" class="btn btn-outline-warning">Login</button>
+                  </form>
             </section>
             </div>
      
