@@ -1,16 +1,20 @@
+<script setup>
+  import AddElement from '@/components/favorite/AddElement.vue'
+</script>
+
 <template>
-    <div class="favorite">
-      <h1>tus favoritos</h1>
+
+    <div>
+
+
     </div>
-  </template>
   
-  <style>
-  @media (min-width: 1024px) {
-    .about {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-    }
-  }
-  </style>
+  <AddElement/>
+  
+</template>
+
+<style lang="scss" scoped>
+  @import '@/assets/variables.scss';
+</style>
+
   

@@ -5,13 +5,13 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <template>
   
-     <!-- <div class="wrapper">
+    <div class="wrapper">
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/login">Login</RouterLink>
         <RouterLink to="/favorite">Favorite</RouterLink>
       </nav>
-    </div> -->
+    </div> 
    
  
   <RouterView />
