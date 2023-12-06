@@ -3,9 +3,7 @@
 </script>
 
 <template>
-  <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#myModal">
-    Añadir
-  </button>
+  <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#myModal">Add</button>
 
   <div class="modal" tabindex="-1" id="myModal">
     <div class="modal-dialog">
