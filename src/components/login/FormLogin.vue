@@ -1,51 +1,50 @@
 <script setup>
-import { ref } from 'vue';
-import { useAuthStore } from '@/stores/auth.js';
-import {route,router} from 'vue-router'
-const username = ref('');
-const password = ref('');
-const store = useAuthStore();
-
+import { ref } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+import { useAuthStore } from '@/stores/auth.js'
 const gifUrl = ref('src/assets/img/Image20231124145247.gif');
+const username = ref('')
+const password = ref('')
+const route = useRoute()
+const router = useRouter()
+const store = useAuthStore()
+
 function login() {
 
-if ( username.value ==  store.user.username && password.value == store.user.password)
-store.user.isAuthenticated = true;
-const redirectPath = route.query.redirect ||'/favorites'
-router.push (redirectPath)
-
+  if (username.value == store.user.username && password.value == store.user.password) {
+    store.user.isAuthenticated = true
+    const redirectPath = route.query.redirect || '/favorite'
+    router.push(redirectPath)
+  }
 }
- </script>
 
-
+</script>
 <template>
-    <section>
-      <div>
-            <div class="gift">
-              <img :src="gifUrl" alt="Descripción del GIF" >
-            </div>
-                <section class="container border  border-5 rounded-5">
-                  <div class="my-icon border  border-5 rounded-circle">
-                    <img src="../../assets/img/Gengar icon 2.png" alt=" pokemon">
-                  </div>
-                
-              <form @submit.prevent="login">
-                    <div class="input-group container-lg ">
-                      <span class="input-group-text mt-5" id="addon-wrapping"><img src="../../assets/img/icon3 1.png" id="icon-pikachu"
-                          alt=""></span>
-                      <input type="text" class="form-control mt-5"  name = "username" placeholder="Username" id="username"
-                        aria-describedby="addon-wrapping" v-model="username">
-                    </div>
-                    <div class="input-group container-lg">
-                      <span class="input-group-text" id="addon-wrapping"><i class="bi bi-key"></i></span>
-                      <input type="password" name = "password" class="form-control" placeholder="Password" id="password"
-                        aria-describedby="addon-wrapping" v-model="password">
-                    </div>
-                    <button type="submit" class="btn btn-outline-warning">Login</button>
-                  </form>
-            </section>
-            </div>
-     
+  <section>
+    <div>
+      <div class="gift">
+        <img :src="gifUrl" alt="Descripción del GIF">
+      </div>
+      <section class="container border  border-5 rounded-5">
+        <div class="my-icon border  border-5 rounded-circle">
+          <img src="../../assets/img/Gengar icon 2.png" alt=" pokemon">
+        </div>
+        <form @submit.prevent="login">
+          <div class="input-group container-lg ">
+            <span class="input-group-text mt-5" id="addon-wrapping"><img src="../../assets/img/icon3 1.png"
+                id="icon-pikachu" alt=""></span>
+            <input type="text" class="form-control mt-5" name="username" placeholder="Username" id="username"
+              aria-describedby="addon-wrapping" v-model="username">
+          </div>
+          <div class="input-group container-lg">
+            <span class="input-group-text" id="addon-wrapping"><i class="bi bi-key"></i></span>
+            <input type="password" name="password" class="form-control" placeholder="Password" id="password"
+              aria-describedby="addon-wrapping" v-model="password">
+          </div>
+          <button type="submit" class="btn btn-outline-warning">Login</button>
+        </form>
+      </section>
+    </div>
   </section>
 </template>
 
