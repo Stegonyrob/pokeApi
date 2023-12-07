@@ -1,8 +1,4 @@
 <script setup>
-import { usePokeStore } from '@/store/poke.js';
-
-const poke = usePokeStore();
-
 
 </script>
 
