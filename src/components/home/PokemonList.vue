@@ -1,6 +1,6 @@
 <script setup>
 import { ref, reactive } from "vue";
-import { getPokemon } from "./repository/repository";
+import { getPokemon } from "../repository/repository";
 import PokemonCard from "./PokemonCard.vue";
 
 let pokemons = reactive([])

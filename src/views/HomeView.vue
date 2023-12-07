@@ -1,6 +1,6 @@
 <script setup>
 
-import PokemonList from "../components/PokemonList.vue";
+import PokemonList from "../components/home/PokemonList.vue";
 
 </script>
 
