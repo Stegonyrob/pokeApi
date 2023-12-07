@@ -13,3 +13,7 @@ import PokemonType from "../components/home/PokemonType.vue";
 
   </main>
 </template>
+
+<style lang="scss" scoped>
+@import "../assets/main.scss";
+</style>
