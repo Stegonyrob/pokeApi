@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 import '@/assets/main.scss'
+=======
+import './assets/main.scss'
+import './components/repository/repository.js'
+>>>>>>> cards
 
+//-------
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 

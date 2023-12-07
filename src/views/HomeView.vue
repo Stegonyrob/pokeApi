@@ -1,9 +1,12 @@
 <script setup>
 
+import PokemonList from "../components/PokemonList.vue";
+
 </script>
 
 <template>
   <main>
-   
-  </main>
+    <h1>HomeView</h1>
+    <PokemonList />
+     </main>
 </template>
