@@ -15,14 +15,6 @@ async function getDetails() {
   detailsLoaded.value = true;
 }
 getDetails();
-
-async function getStats() {
-  const response = await fetch(detailsPokemon);
-  const data = await response.json();
-  detailsStats = data.stats;
-  detailsLoaded.value = true;
-}
-getStats();
 </script>
 
 <template>
@@ -39,12 +31,37 @@ getStats();
       />
     </div>
     <div class="pokemon-data-card">
-      <div class="pokemon-health">
+      <div>
         <h2>{{ props.pokemon.name }}</h2>
-        <hr />
-        <h3>{{ detailsStats }} hp</h3>
+        <div class="pokemon-health">
+          <hr />
+          <h3>{{ detailsPokemon.stats["0"].base_stat }} hp</h3>
+        </div>
       </div>
-      <div v-show="detailsLoaded">{{ detailsPokemon.height }}</div>
+      <div class="pokemon-stats">
+        <div v-show="detailsLoaded">
+          <img
+            v-if="detailsLoaded"
+            :src="
+              detailsPokemon['types']['0']['type']['url']['animated']
+                .front_default
+            "
+            alt="pokemon"
+          />
+          <img
+            v-if="detailsLoaded"
+            :src="
+              detailsPokemon['types']['1']['type']['url']['animated']
+                .front_default
+            "
+            alt="pokemon"
+          />
+        </div>
+        <div v-show="detailsLoaded">
+          {{ detailsPokemon.stats["1"].base_stat }} attack
+        </div>
+        <div v-show="detailsLoaded">{{ detailsPokemon.height }}</div>
+      </div>
     </div>
   </div>
 </template>
@@ -75,6 +92,17 @@ img {
 .pokemon-health {
   border-bottom: 1px solid black;
 }
+.pokemon-stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+.pokemon-stats > div {
+  width: 100%;
+  height: 100%;
+  background-color: aqua;
+}
 hr {
   width: 70%;
   height: 3px;
@@ -84,11 +112,13 @@ hr {
 h2 {
   font-size: 140%;
   font-family: "Pixelify Sans", sans-serif;
-  margin: 1em;
   filter: drop-shadow(1px 2px 1px rgba(0, 0, 0, 0.309));
+  margin-top: 10px;
 }
 h3 {
   font-family: "Pixelify Sans", sans-serif;
-  color: rgb(109, 109, 109);
+  color: rgb(85, 106, 84);
+  font-size: 15px;
+  margin-bottom: 10px;
 }
 </style>
