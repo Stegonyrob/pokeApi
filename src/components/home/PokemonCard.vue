@@ -21,20 +21,9 @@ function addToFavorites() {
 }
 getDetails()
 
-let detailsPokemon = reactive({});
-let detailsLoaded = ref(false);
-
-async function getDetails() {
-  const response = await fetch(props.pokemon.url);
-  const data = await response.json();
-  detailsPokemon = data;
-  detailsLoaded.value = true;
-}
-getDetails();
 </script>
-
 <template>
-  <div class="pokemon-base-card">
+
     <div class="pokemon-image-card">
       <img
         v-if="detailsLoaded"
