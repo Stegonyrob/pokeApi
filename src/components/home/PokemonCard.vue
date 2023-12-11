@@ -7,19 +7,24 @@ const props = defineProps({
 
 let detailsPokemon = reactive({});
 let detailsLoaded = ref(false)
-
+let favorites = reactive([]);
 async function getDetails() {
   const response = await fetch(props.pokemon.url);
   const data = await response.json();
   detailsPokemon = data;
   detailsLoaded.value = true
 }
+function addToFavorites() {
+ if (!favorites.includes(props.pokemon)) {
+   favorites.push(props.pokemon);
+ }
+}
 getDetails()
 
 </script>
 
 <template>
-  <div>
+  <div class="card" style="width: 18rem;">
     <h3>Poke Card</h3>
     <img v-if="detailsLoaded" :src="detailsPokemon.sprites.front_default" alt="pokemon" />
     <div>
@@ -28,5 +33,13 @@ getDetails()
     </div>
 
     <div v-show="detailsLoaded">{{ detailsPokemon.height }}</div>
-  </div>
+    <div><i class="bi bi-heart btn btn-outline-danger" @click="addToFavorites"></i></div>
+   
+ </div>
 </template>
+<style lang="scss" scoped>
+.card {
+  display: flex;
+  margin-left: 10%;
+  }
+</style>
