@@ -9,5 +9,3 @@ export async function getPokemon() {
     console.log("something happened!!!");
   }
 }
-
-export const pokemonResults = await getPokemon();

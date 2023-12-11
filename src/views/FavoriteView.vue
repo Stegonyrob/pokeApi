@@ -2,20 +2,9 @@
 
 </script>
 <template>
-    <div class="favorite">
-      <h1>tus favoritos</h1>
-     
+  <div class="favorite">
+    <h1>tus favoritos</h1>
+  </div>
+</template>
 
-    </div>
-  </template>
-  
-  <style>
-  @media (min-width: 1024px) {
-    .about {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-    }
-  }
-  </style>
-  
+<style></style>

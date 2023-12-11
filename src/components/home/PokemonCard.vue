@@ -21,9 +21,64 @@ function addToFavorites() {
 }
 getDetails()
 
+let detailsPokemon = reactive({});
+let detailsLoaded = ref(false);
+
+async function getDetails() {
+  const response = await fetch(props.pokemon.url);
+  const data = await response.json();
+  detailsPokemon = data;
+  detailsLoaded.value = true;
+}
+getDetails();
 </script>
 
 <template>
+  <div class="pokemon-base-card">
+    <div class="pokemon-image-card">
+      <img
+        v-if="detailsLoaded"
+        :src="
+          detailsPokemon['sprites']['versions']['generation-v']['black-white'][
+            'animated'
+          ].front_default
+        "
+        alt="pokemon"
+      />
+    </div>
+    <div class="pokemon-data-card">
+      <div>
+        <h2>{{ props.pokemon.name }}</h2>
+        <div class="pokemon-health">
+          <hr />
+          <h3>{{ detailsPokemon.stats["0"].base_stat }} hp</h3>
+        </div>
+      </div>
+      <div class="pokemon-stats">
+        <div v-show="detailsLoaded">
+          <img
+            v-if="detailsLoaded"
+            :src="
+              detailsPokemon['types']['0']['type']['url']['animated']
+                .front_default
+            "
+            alt="pokemon"
+          />
+          <img
+            v-if="detailsLoaded"
+            :src="
+              detailsPokemon['types']['1']['type']['url']['animated']
+                .front_default
+            "
+            alt="pokemon"
+          />
+        </div>
+        <div v-show="detailsLoaded">
+          {{ detailsPokemon.stats["1"].base_stat }} attack
+        </div>
+        <div v-show="detailsLoaded">{{ detailsPokemon.height }}</div>
+      </div>
+    </div>
   <div class="pokemon-base-card">
     <div class="pokemon-image-card">
       <img
@@ -76,6 +131,7 @@ getDetails()
    
  
 </template>
+
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap");
 .pokemon-base-card {
