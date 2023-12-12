@@ -31,7 +31,7 @@ getDetails();
       />
     </div>
     <div class="pokemon-data-card">
-      <div>
+      <div v-if="detailsLoaded">
         <h2>{{ props.pokemon.name }}</h2>
         <div class="pokemon-health">
           <hr />
@@ -39,28 +39,11 @@ getDetails();
         </div>
       </div>
       <div class="pokemon-stats">
-        <div v-show="detailsLoaded">
-          <img
-            v-if="detailsLoaded"
-            :src="
-              detailsPokemon['types']['0']['type']['url']['animated']
-                .front_default
-            "
-            alt="pokemon"
-          />
-          <img
-            v-if="detailsLoaded"
-            :src="
-              detailsPokemon['types']['1']['type']['url']['animated']
-                .front_default
-            "
-            alt="pokemon"
-          />
-        </div>
-        <div v-show="detailsLoaded">
+        <div id="typePokemon"></div>
+        <div v-if="detailsLoaded">
           {{ detailsPokemon.stats["1"].base_stat }} attack
         </div>
-        <div v-show="detailsLoaded">{{ detailsPokemon.height }}</div>
+        <div v-if="detailsLoaded">{{ detailsPokemon.height }}</div>
       </div>
     </div>
   </div>
@@ -120,5 +103,9 @@ h3 {
   color: rgb(85, 106, 84);
   font-size: 15px;
   margin-bottom: 10px;
+}
+#pokemonType {
+  display: flex;
+  justify-content: space-around;
 }
 </style>
