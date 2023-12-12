@@ -1,69 +1,36 @@
 <script setup>
 import { ref, reactive } from "vue";
+import { useFavoritesStore } from './../../stores/favoritesStore';
 
 const props = defineProps({
   pokemon: Object,
 });
-
 let detailsPokemon = reactive({});
-let detailsLoaded = ref(false)
+let detailsLoaded = ref(false);
+let isFavorite = ref(false);
+
 
 async function getDetails() {
   const response = await fetch(props.pokemon.url);
   const data = await response.json();
   detailsPokemon = data;
-  detailsLoaded.value = true
+  detailsLoaded.value = true;
 }
-getDetails()
 
+const favoritesStore = useFavoritesStore();
+
+function toggleFavorite() {
+ isFavorite.value = !isFavorite.value;
+ if (isFavorite.value) {
+   favoritesStore.addFavorite(detailsPokemon);
+ } else {
+   favoritesStore.removeFavorite(detailsPokemon);
+ }
+}
+
+getDetails();
 </script>
 <template>
-<<<<<<< HEAD
-
-    <div class="pokemon-image-card">
-      <img
-        v-if="detailsLoaded"
-        :src="
-          detailsPokemon['sprites']['versions']['generation-v']['black-white'][
-            'animated'
-          ].front_default
-        "
-        alt="pokemon"
-      />
-    </div>
-    <div class="pokemon-data-card">
-      <div>
-        <h2>{{ props.pokemon.name }}</h2>
-        <div class="pokemon-health">
-          <hr />
-          <h3>{{ detailsPokemon.stats["0"].base_stat }} hp</h3>
-        </div>
-      </div>
-      <div class="pokemon-stats">
-        <div v-show="detailsLoaded">
-          <img
-            v-if="detailsLoaded"
-            :src="
-              detailsPokemon['types']['0']['type']['url']['animated']
-                .front_default
-            "
-            alt="pokemon"
-          />
-          <img
-            v-if="detailsLoaded"
-            :src="
-              detailsPokemon['types']['1']['type']['url']['animated']
-                .front_default
-            "
-            alt="pokemon"
-          />
-        </div>
-        <div v-show="detailsLoaded">
-          {{ detailsPokemon.stats["1"].base_stat }} attack
-        </div>
-        <div v-show="detailsLoaded">{{ detailsPokemon.height }}</div>
-      </div>
-    </div>
   <div class="pokemon-base-card">
     <div class="pokemon-image-card">
       <img
@@ -74,10 +41,14 @@ getDetails()
           ].front_default
         "
         alt="pokemon"
-      />
+      /> <button
+          class="favorite-button"
+          :class="{ 'favorite-selected': isFavorite }"
+          @click="toggleFavorite"
+        ><i class="bi bi-heart"></i></button>
     </div>
     <div class="pokemon-data-card">
-      <div>
+      <div v-if="detailsLoaded">
         <h2>{{ props.pokemon.name }}</h2>
         <div class="pokemon-health">
           <hr />
@@ -85,38 +56,15 @@ getDetails()
         </div>
       </div>
       <div class="pokemon-stats">
-        <div v-show="detailsLoaded">
-          <img
-            v-if="detailsLoaded"
-            :src="
-              detailsPokemon['types']['0']['type']['url']['animated']
-                .front_default
-            "
-            alt="pokemon"
-          />
-          <img
-            v-if="detailsLoaded"
-            :src="
-              detailsPokemon['types']['1']['type']['url']['animated']
-                .front_default
-            "
-            alt="pokemon"
-          />
-        </div>
-        <div v-show="detailsLoaded">
+        <div id="typePokemon"></div>
+        <div v-if="detailsLoaded">
           {{ detailsPokemon.stats["1"].base_stat }} attack
         </div>
-        <div v-show="detailsLoaded">{{ detailsPokemon.height }}</div>
+        <div v-if="detailsLoaded">{{ detailsPokemon.height }}</div>
       </div>
     </div>
   </div>
-
-
-    <div><i class="bi bi-heart btn btn-outline-danger" @click="addToFavorites"></i></div>
-   
- 
 </template>
-
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap");
 .pokemon-base-card {
@@ -172,17 +120,8 @@ h3 {
   font-size: 15px;
   margin-bottom: 10px;
 }
+#pokemonType {
+  display: flex;
+  justify-content: space-around;
+}
 </style>
-=======
-  <div>
-    <h3>Poke Card</h3>
-    <img v-if="detailsLoaded" :src="detailsPokemon.sprites.front_default" alt="pokemon" />
-    <div>
-      <h2>Soy la card de {{ props.pokemon.name }} con id {{ detailsPokemon.id }} </h2>
-      <div id="uri">{{ props.pokemon.url }}</div>
-    </div>
-
-    <div v-show="detailsLoaded">{{ detailsPokemon.height }}</div>
-  </div>
-</template>
->>>>>>> parent of d47d3e7 (work in heart)
