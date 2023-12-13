@@ -46,6 +46,7 @@
   </div>
 </template>
 
+
 <style lang="scss" scoped>
 .modal-content {
     margin-top: 8rem;
