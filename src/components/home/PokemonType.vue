@@ -3,9 +3,10 @@ import { ref, reactive } from "vue";
 
 let typesPokemon = reactive({});
 let detailsLoaded = ref(false);
+const uri = import.meta.env.VITE_API_ENDPOINT_POKEMON_TYPE;
 
 async function getDetails() {
-  const response = await fetch("https://pokeapi.co/api/v2/type");
+  const response = await fetch(uri);
 
   const data = await response.json();
   typesPokemon = data.results;
