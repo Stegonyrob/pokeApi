@@ -1,13 +1,13 @@
 <script setup>
-import Header from '@/components/home/Header.vue'
-import Footer from '@/components/home/Footer.vue'
+
+
 import { ref } from "vue";
 import PokemonList from "../components/home/PokemonList.vue";
 import PokemonType from "../components/home/PokemonType.vue";
 </script>
 <template>
 
-    <Header></Header>
+    
   <main>
     <div>
       <PokemonType />
@@ -18,7 +18,7 @@ import PokemonType from "../components/home/PokemonType.vue";
     <section>
       <PokemonList id="pokemon-list" />
     </section>
-    <Footer></Footer>
+   
   </main>
 </template>
 
@@ -42,22 +42,29 @@ section {
   justify-content: center;
   gap: 20px;
 }
-@media screen and (min-width: 480px) {
+
+@media screen and (min-width: 700px) {
   #pokemon-list {
     grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+}
+@media screen and (min-width: 1170px) {
+  #pokemon-list {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  #pokemon-list {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     gap: 40px;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 2000px) {
   #pokemon-list {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     gap: 60px;
-  }
-}
-@media screen and (min-width: 1300px) {
-  #pokemon-list {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    gap: 80px;
   }
 }
 </style>
