@@ -26,7 +26,7 @@ onMounted(() => {
     </div>
 
     <div v-else>
-      <p>No Pokémon saved.</p>
+      <p>No Pokémon added</p>
     </div>
 
     <AddElement/>
