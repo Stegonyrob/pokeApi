@@ -1,5 +1,41 @@
 <script setup>
+import { ref, onMounted } from 'vue';
 
+const pokephoto = ref('');
+const pokename = ref('');
+const pokecharge = ref('');
+const pokeheight = ref('');
+const pokeweight = ref('');
+
+const saveData = () => {
+    const newPokemon = {
+        photo: pokephoto.value,
+        name: pokename.value,
+        charge: pokecharge.value,
+        height: pokeheight.value,
+        weight: pokeweight.value
+    };
+
+    let pokemonList = JSON.parse(localStorage.getItem('pokemonList')) || [];
+    pokemonList.push(newPokemon);
+
+    localStorage.setItem('pokemonList', JSON.stringify(pokemonList));
+    alert('Pokémon agregado!');
+
+    // Opcional: Limpiar el formulario después de guardar
+    pokephoto.value = '';
+    pokename.value = '';
+    pokecharge.value = '';
+    pokeheight.value = '';
+    pokeweight.value = '';
+};
+
+// Opcional: Cargar datos existentes al iniciar
+const loadData = () => {
+    // Carga datos si necesitas hacer algo con ellos al iniciar
+};
+
+onMounted(loadData);
 </script>
 
 <template>
@@ -38,8 +74,8 @@
                 <input type="text" class="form-control mt-5" name="pokeweight" placeholder="Pokéweight" id="pokeweight" aria-describedby="addon-wrapping" v-model="pokeweight">       
             </div>
             <div class="modal-footer mt-5">
-                <button type="button" class="btn btn-warning">Save changes</button>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-warning" @click="saveData">Save changes</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
           </div>
       </div>
@@ -70,3 +106,6 @@
 }
 
 </style>
+
+
+
