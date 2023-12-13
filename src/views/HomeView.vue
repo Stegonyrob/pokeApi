@@ -17,7 +17,9 @@ import PokemonType from "../components/home/PokemonType.vue";
     </section>
   </main>
 </template>
-<style scoped>
+<style lang= "scss" scoped>
+@import "../assets/main.scss";
+
 main {
   display: flex;
   flex-direction: column;

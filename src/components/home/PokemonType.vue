@@ -33,7 +33,7 @@ getDetails();
 </template>
 
 <style lang="scss" scoped>
-@import "../../assets/variables";
+@import "../../assets/main.scss";
 
 #Title {
   color: rgb(255, 0, 217);
@@ -45,6 +45,7 @@ getDetails();
   flex-wrap: wrap;
   color: rgb(18, 18, 18, 0.8);
   font-family: $font-pixel;
+  font-size: 1em;
   border: 1px solid $primary-color;
   border-radius: 10px;
 }
