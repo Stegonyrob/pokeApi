@@ -1,19 +1,28 @@
 import { defineStore } from 'pinia';
+import { ref, reactive } from 'vue';
+import { getPokemon } from '../components/repository/repository';
 
-export const useFavoritesStore = defineStore({
- id: 'favorites',
- state: () => ({
-   favoritesList: [],
- }),
- actions: {
-   addFavorite(pokemon) {
-     this.favoritesList.push(pokemon);
-   },
-   removeFavorite(pokemon) {
-     const index = this.favoritesList.indexOf(pokemon);
-     if (index !== -1) {
-       this.favoritesList.splice(index, 1);
-     }
-   },
- },
+export const useFavoritesStore = defineStore("favorites", () => {
+ const favoritesList = reactive([]);
+
+ function addFavorite(pokemon) {
+   if (!favoritesList.includes(pokemon)) {
+     favoritesList.push(pokemon);
+   }
+ }
+
+ function removeFavorite(pokemon) {
+   const index = favoritesList.indexOf(pokemon);
+   if (index !== -1) {
+     favoritesList.splice(index, 1);
+   }
+ }
+
+ async function getFavorites() {
+   const allPokemons = await getPokemon();
+   const favorites = allPokemons.filter(pokemon => favoritesList.includes(pokemon));
+   return favorites;
+ }
+
+ return { favoritesList, addFavorite, removeFavorite, getFavorites };
 });
