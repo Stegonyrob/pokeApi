@@ -29,6 +29,8 @@ function toggleFavorite() {
 }
 
 getDetails();
+
+
 </script>
 <template>
   <div class="pokemon-base-card">
@@ -41,11 +43,9 @@ getDetails();
           ].front_default
         "
         alt="pokemon"
-      /> <button
-          class="favorite-button"
+      /> <i class="bi bi-heart favorite-button"
           :class="{ 'favorite-selected': isFavorite }"
-          @click="toggleFavorite"
-        ><i class="bi bi-heart"></i></button>
+          @click="toggleFavorite" ></i>
     </div>
     <div class="pokemon-data-card">
       <div v-if="detailsLoaded">
@@ -65,7 +65,7 @@ getDetails();
     </div>
   </div>
 </template>
-<style scoped>
+<style lang = "scss" scoped>
 @import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap");
 .pokemon-base-card {
   width: 100%;
@@ -124,4 +124,17 @@ h3 {
   display: flex;
   justify-content: space-around;
 }
+
+.favorite-button {
+ margin-top: -10rem;
+ color: rgb(98, 88, 88);
+}
+
+.favorite-button.favorite-selected {
+ color: red;
+ fill: red;
+}
+
+
+
 </style>

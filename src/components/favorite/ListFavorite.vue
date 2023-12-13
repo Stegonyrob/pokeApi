@@ -1,29 +1,33 @@
 <script setup>
-import { ref, reactive, computed } from "vue";
+import { ref, reactive, onMounted } from "vue";
 import { getPokemon } from '../repository/repository.js';
 import { useFavoritesStore } from '../../stores/favoritesStore.js';
 import PokemonCard from "../home/PokemonCard.vue";
 
-let pokemons = reactive([]);
-let isLoaded = ref(false);
-
 const favoritesStore = useFavoritesStore();
 const favoritesList = favoritesStore.favoritesList;
 
-async function getData() {
- pokemons = await getPokemon();
+let pokemons = reactive([]);
+let isLoaded = ref(false);
+
+async function getFavorites() {
+ const allPokemons = await getPokemon();
+ pokemons = allPokemons.filter(pokemon => favoritesList.includes(pokemon.id));
  isLoaded.value = true;
 }
 
-getData();
+onMounted(async () => {
+ await getFavorites();
+});
 </script>
 
 <template>
  <section>
  <PokemonCard
-   v-if="isLoaded"
-   v-for="pokemon in favoritesList"
-   :pokemon="pokemon"
+  v-if="isfavorite"
+  v-for="pokemon in favoritesStore"
+  :key="pokemon.id"
+  :isfavorite="true"
  />
  <div v-else>Cargando</div>
  </section>
