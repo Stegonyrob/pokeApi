@@ -1,8 +1,5 @@
 <script setup>
-import { ref, onMounted } from 'vue';
 
-
-import { ref } from "vue";
 import PokemonList from "../components/home/PokemonList.vue";
 import PokemonType from "../components/home/PokemonType.vue";
 </script>

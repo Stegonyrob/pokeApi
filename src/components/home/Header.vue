@@ -21,13 +21,13 @@
           </form>
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
              </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"><img src="/src/assets/img/Gengar icon.png" width="47" height="39" alt="Gengar icon">Login</a>
+              <a class="nav-link" href="/login"><img src="/src/assets/img/Gengar icon.png" width="47" height="39" alt="Gengar icon">Login</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="#F9825C" class="bi bi-heart-fill" viewBox="0 0 16 16">
+              <a class="nav-link" href="/favorite"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="#F9825C" class="bi bi-heart-fill" viewBox="0 0 16 16">
                <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
              </svg></a>
             </li>
