@@ -8,7 +8,7 @@ import PokemonType from "../components/home/PokemonType.vue";
 <template>
 
     <Header></Header>
-  
+  <main>
     <div>
       <PokemonType />
     </div>
