@@ -6,7 +6,7 @@ import PokemonList from "../components/home/PokemonList.vue";
 import PokemonType from "../components/home/PokemonType.vue";
 </script>
 <template>
-  <main>
+
     <Header></Header>
   
     <div>
