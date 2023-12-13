@@ -20,7 +20,7 @@ const saveData = () => {
     pokemonList.push(newPokemon);
 
     localStorage.setItem('pokemonList', JSON.stringify(pokemonList));
-    alert('Pokémon agregado!');
+    alert('Pokémon added!');
 
     // Opcional: Limpiar el formulario después de guardar
     pokephoto.value = '';
