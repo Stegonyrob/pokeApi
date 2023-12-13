@@ -56,7 +56,7 @@ onMounted(loadData);
                 <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
                 <path d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12"/>
                 </svg></span>
-                <input type="text" class="form-control mt-5" name="pokephoto" placeholder="Add Poképhoto" id="pokephoto" aria-describedby="addon-wrapping" v-model="pokephoto">       
+                <input type="text" class="form-control mt-5" name="pokephoto" placeholder="Add Poképhoto URL" id="pokephoto" aria-describedby="addon-wrapping" v-model="pokephoto">       
             </div>
             <div class="input-group container-sm px-5">
               <span class="input-group-text mt-5" id="addon-wrapping"><img src="../../assets/img/icon3 1.png" id="icon-pikachu" alt="" height="33"></span>
