@@ -7,6 +7,7 @@ import FormLogin from '../components/login/FormLogin.vue'
      
       <FormLogin/>
     </div>
+    <PokemonType />
   </template>
   
   <style lang="scss" scoped>

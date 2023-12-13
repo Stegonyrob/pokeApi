@@ -48,7 +48,6 @@ if (username.value == store.user.username) {
 </template>
 
 <style lang="scss" scoped>
-@import '@/assets/base.scss';
 
 section {
   display: flex;
