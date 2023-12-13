@@ -1,10 +1,13 @@
 <script setup>
 import { ref, reactive } from "vue";
+
 const props = defineProps({
   pokemon: Object,
 });
+
 let detailsPokemon = reactive({});
 let detailsLoaded = ref(false);
+
 async function getDetails() {
   const response = await fetch(props.pokemon.url);
   const data = await response.json();
@@ -12,7 +15,16 @@ async function getDetails() {
   detailsLoaded.value = true;
 }
 getDetails();
+
+async function getStats() {
+  const response = await fetch(detailsPokemon);
+  const data = await response.json();
+  detailsStats = data.stats;
+  detailsLoaded.value = true;
+}
+getStats();
 </script>
+
 <template>
   <div class="pokemon-base-card">
     <div class="pokemon-image-card">
@@ -27,23 +39,16 @@ getDetails();
       />
     </div>
     <div class="pokemon-data-card">
-      <div v-if="detailsLoaded">
+      <div class="pokemon-health">
         <h2>{{ props.pokemon.name }}</h2>
-        <div class="pokemon-health">
-          <hr />
-          <h3>{{ detailsPokemon.stats["0"].base_stat }} hp</h3>
-        </div>
+        <hr />
+        <h3>{{ detailsStats }} hp</h3>
       </div>
-      <div class="pokemon-stats">
-        <div id="typePokemon"></div>
-        <div v-if="detailsLoaded">
-          {{ detailsPokemon.stats["1"].base_stat }} attack
-        </div>
-        <div v-if="detailsLoaded">{{ detailsPokemon.height }}</div>
-      </div>
+      <div v-show="detailsLoaded">{{ detailsPokemon.height }}</div>
     </div>
   </div>
 </template>
+
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap");
 .pokemon-base-card {
@@ -70,17 +75,6 @@ img {
 .pokemon-health {
   border-bottom: 1px solid black;
 }
-.pokemon-stats {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 100%;
-}
-.pokemon-stats > div {
-  width: 100%;
-  height: 100%;
-  background-color: aqua;
-}
 hr {
   width: 70%;
   height: 3px;
@@ -90,17 +84,11 @@ hr {
 h2 {
   font-size: 140%;
   font-family: "Pixelify Sans", sans-serif;
+  margin: 1em;
   filter: drop-shadow(1px 2px 1px rgba(0, 0, 0, 0.309));
-  margin-top: 10px;
 }
 h3 {
   font-family: "Pixelify Sans", sans-serif;
-  color: rgb(85, 106, 84);
-  font-size: 15px;
-  margin-bottom: 10px;
-}
-#pokemonType {
-  display: flex;
-  justify-content: space-around;
+  color: rgb(109, 109, 109);
 }
 </style>
