@@ -2,7 +2,7 @@
 import Header from '@/components/home/Header.vue'
 import Footer from '@/components/home/Footer.vue'
 import { ref } from "vue";
-import PokemonList from "../components/PokemonList.vue";
+import PokemonList from "../components/home/PokemonList.vue";
 import PokemonType from "../components/home/PokemonType.vue";
 </script>
 <template>
