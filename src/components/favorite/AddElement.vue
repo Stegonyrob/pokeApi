@@ -36,6 +36,7 @@ const loadData = () => {
 };
 
 onMounted(loadData);
+
 </script>
 
 <template>
