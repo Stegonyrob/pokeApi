@@ -25,6 +25,7 @@ getDetails();
         <input :name="pokemonType.name" type="checkbox" v-model="typesPokemon.type" :value="pokemonType.name" />
         <label class="filterName" :for="pokemonType.name">{{ pokemonType.name }} </label>
       </div>
+
     </div>
 
   </div>
@@ -49,13 +50,23 @@ getDetails();
 
 #checkFilter {
   margin: 1%;
+  .todos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
   .filterName {
     padding-left: 1em;
+    justify-content: center;
   }
   input[type="checkbox"]:checked + label {
     color: #be2b5fc8;
     content: #be2b5fc8;
+    
 }
+
+
+
 }
 
 </style>

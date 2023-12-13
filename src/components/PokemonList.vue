@@ -16,7 +16,7 @@ getData()
 
 <template>
   <section>
-    <h2>List Pokemons</h2>
+
     <PokemonCard v-if="isLoaded" v-for="pokemon in pokemons" :pokemon="pokemon"/>
     <div v-else>Cargando </div>
   </section>
