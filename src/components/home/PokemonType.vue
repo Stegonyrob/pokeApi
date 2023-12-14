@@ -17,8 +17,7 @@ getDetails();
 
 <template>
   <div>
-    <h3 id="Title">Poke type</h3>
-
+    <br>
     <div v-if="detailsLoaded"></div>
     
     <div id="boxFilter">
