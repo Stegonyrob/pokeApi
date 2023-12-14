@@ -9,11 +9,13 @@ onMounted(() => {
     pokemonList.value = JSON.parse(localStorage.getItem('pokemonList')) || [];
 });
 </script>
+
 <template>
-  <div class="favorite">
+  <section class="container">
+  <div class="favorite grid-container">
      <ListFavorite id="favorite-list"/> 
   </div>
-  <div>
+  <div class="add-pokemon">
     <div v-if="pokemonList.length > 0">
       <h3>Pokémon List:</h3>
       <ul>
@@ -34,18 +36,15 @@ onMounted(() => {
     <AddElement/>
 
   </div>
+</section>
 </template>
 <style scoped>
-main {
+.grid-container{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-section {
-  width: 85%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  width: 50%;
+ gap: 5rem;
+  
 }
 #favorite-list {
   display: grid;
@@ -53,22 +52,13 @@ section {
   justify-content: center;
   gap: 20px;
 }
-@media screen and (min-width: 480px) {
-  #favorite-list {
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 40px;
-  }
+section {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
 }
-@media screen and (min-width: 768px) {
-  #favorite-list {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 60px;
-  }
-}
-@media screen and (min-width: 1300px) {
-  #favorite-list {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    gap: 80px;
-  }
+
+.add-pokemon{
+  margin-left: 25%;
 }
 </style>

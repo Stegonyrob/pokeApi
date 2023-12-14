@@ -154,7 +154,7 @@ getDetails();
           ].front_default
         "
         alt="pokemon"
-      /> <i class="bi bi-heart favorite-button"
+      /> <i class="bi bi-heart-fill favorite-button"
           :class="{ 'favorite-selected': isFavorite }"
           @click="toggleFavorite" ></i>
     </div>
