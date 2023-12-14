@@ -65,6 +65,7 @@ footer {
 
   .copyright {
     margin-top: 1%;
+    margin-right: 1.3%;
   }
 }
 </style>

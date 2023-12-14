@@ -5,7 +5,7 @@
 <template>
   <header>
     <div>
-      <a class="navbar-brand" href="#"> <img src="/src/assets/img/pokehub14.png" width="257" height="77" alt="Poké-Hub logo"></a>
+      <a class="navbar-brand" href="/"> <img src="/src/assets/img/pokehub14.png" width="299" height="107" alt="Poké-Hub logo"></a>
     </div>
     <nav class="navbar navbar-expand-lg">
      <div class="container-fluid">
@@ -21,7 +21,7 @@
           </form>
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">Home</a>
+              <a class="nav-link active" aria-current="page" href="/"><p>Home</p></a>
              </li>
             <li class="nav-item">
               <a class="nav-link" href="/login"><img src="/src/assets/img/Gengar icon.png" width="47" height="39" alt="Gengar icon">Login</a>
@@ -48,25 +48,33 @@ header {
   padding: 1%;
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
 
   .navbar-brand {
-    margin-left: 3vh;
+    margin-left: 1rem;
   }
 
   .nav-link {
     display: flex;
     flex-direction: column;
+    color: #1F6CD0;
   }
 
   .bi-heart-fill {
-    margin-top: 3vh;
-    margin-left: 3vh;
+    margin-top: 2.1rem;
   }
 
   .active {
-    margin-top: 3.3vh;
-    margin-left: 5vh;
-    margin-right: 2vh;
+    margin-top: 2.4rem;
+    margin-left: 0.7rem;
+  }
+  
+  p{
+    color: #1F6CD0;
+  }
+
+  .d-flex {
+    margin-top: 0.45rem;
   }
 
 }
