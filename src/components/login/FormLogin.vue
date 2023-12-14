@@ -60,8 +60,9 @@ section {
     border-color: #86b7fe !important;
     z-index: -1;
     align-items: center;
-    margin-top: -80%;
-    margin-right: -40%;
+    margin-top: -95%;
+    margin-right: -70%;
+    margin-bottom: 20%;
     
     .input-group {
       margin-top: 1.5rem;
@@ -88,7 +89,7 @@ section {
   }
 
   .gift {
-    margin-left: -15rem;
+    margin-left: -18rem;
   }
 }
 
