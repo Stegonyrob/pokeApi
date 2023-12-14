@@ -48,6 +48,8 @@ getDetails();
   font-size: 1em;
   border: 1px solid $primary-color;
   border-radius: 10px;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 #checkFilter {
