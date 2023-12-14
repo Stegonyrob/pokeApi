@@ -34,13 +34,13 @@ npm run build
 npm run test:unit
 ```
 
-#POKEAPI
+# POKEAPI
 
-##CONTEXTO DEL PROYECTO
+## CONTEXTO DEL PROYECTO
 
 Varias empresas de diferentes ámbitos nos han encargado una SPA (Single Page Application).
 
-Requisitos:
+### Requisitos:
 
 SPA con Vue
 Responsive Design
@@ -51,5 +51,11 @@ En la página de favoritos también debemos tener la opción de agregar un eleme
 Agregar la paginación de elementos
 Tener la posibilidad de filtrar o buscar los elementos deseados
 Posibilidad de cambiar la imagen de un elemento
+
+## USER FLOW
+
+<p align="center">
+  <img src="./public/assets/img/USERFLOW.JPG" title="diagrama" alt="diagrama de flujo" width="200" height="200"/>
+</p>
 
 
